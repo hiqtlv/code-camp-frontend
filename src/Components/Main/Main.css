@@ -1,0 +1,23 @@
+.App-header {
+  /* background-color: #282c34; */
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #333;
+}
+.App-footer {
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #333;
+}
+.App-content {
+  flex: 1;
+}
+
+.App-main {
+  background-color: lightgoldenrodyellow;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

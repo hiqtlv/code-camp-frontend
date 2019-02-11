@@ -1,0 +1,11 @@
+.App-aside {
+  background-color: darkblue;
+  min-width: 200px;
+  width: 200px;
+  color: #eee;
+  padding: 8px 16px;
+}
+.App-aside .logout {
+  display: block;
+  width: 100%;
+}
