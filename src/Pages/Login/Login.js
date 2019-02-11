@@ -7,22 +7,40 @@ import Button from "react-bootstrap/Button";
 const Login = props => {
   if (!props.isLoggedIn) {
     console.log(props);
+    let email = "";
+    let pw = "";
     return (
       <div className="App-login panel">
-        <Form>
-          <Form.Group controlId="formBasicEmail">
+        <Form onSubmit={e => props.login(e, { email: email, pw: pw })}>
+          <Form.Group controlId="formEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
+            <Form.Control
+              type="email"
+              placeholder="Enter email"
+              value={email}
+              onChange={e => {
+                console.log(e.target.value);
+                email = e.target.value;
+              }}
+            />
             <Form.Text className="text-muted">
               We'll never share your email with anyone else.
             </Form.Text>
           </Form.Group>
 
-          <Form.Group controlId="formBasicPassword">
+          <Form.Group controlId="formPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              value={pw}
+              onChange={e => {
+                console.log(e.target.value);
+                pw = e.target.value;
+              }}
+            />
           </Form.Group>
-          <Button onClick={props.login} variant="primary" type="button">
+          <Button variant="primary" type="submit">
             Login
           </Button>
         </Form>
