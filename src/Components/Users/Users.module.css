@@ -1,0 +1,19 @@
+.app_user {
+  list-style: none;
+  padding: 8px 16px;
+  display: flex;
+}
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.infos {
+  flex: 1;
+  padding: 4px 8px;
+  text-align: left;
+}
+
+h5 {
+  margin: 0;
+}

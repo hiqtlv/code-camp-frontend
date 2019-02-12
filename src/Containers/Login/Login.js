@@ -6,20 +6,31 @@ import Button from "react-bootstrap/Button";
 
 const Login = props => {
   if (!props.isLoggedIn) {
-    console.log(props);
     let email = "";
     let pw = "";
+    let loading = null;
+
+    const classes = ["App-login", "panel"];
+    if (!props.isReady) {
+      loading = (
+        <div className="loading">
+          <div className="chasing-dots">
+            <div className="dot1" />
+            <div className="dot2" />
+          </div>
+        </div>
+      );
+    }
+
     return (
-      <div className="App-login panel">
+      <div className={classes.join(" ")}>
         <Form onSubmit={e => props.login(e, { email: email, pw: pw })}>
           <Form.Group controlId="formEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control
               type="email"
               placeholder="Enter email"
-              value={email}
               onChange={e => {
-                console.log(e.target.value);
                 email = e.target.value;
               }}
             />
@@ -28,22 +39,21 @@ const Login = props => {
             </Form.Text>
           </Form.Group>
 
-          <Form.Group controlId="formPassword">
+          {/* <Form.Group controlId="formPassword">
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
               placeholder="Password"
-              value={pw}
               onChange={e => {
-                console.log(e.target.value);
                 pw = e.target.value;
               }}
             />
-          </Form.Group>
+          </Form.Group> */}
           <Button variant="primary" type="submit">
             Login
           </Button>
         </Form>
+        {loading}
       </div>
     );
   }

@@ -1,0 +1,104 @@
+.App-login {
+  margin: auto;
+  justify-self: center;
+  text-align: left;
+  padding: 16px 32px;
+  background: #eee;
+  border: 1px solid #999;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px #666;
+}
+.App-login .loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 33, 33, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App-login .inputfield {
+  display: block;
+  margin: 16px;
+  min-width: 200px;
+}
+.App-login .btn {
+  display: block;
+  width: 100%;
+}
+
+.App-login .loading .chasing-dots {
+  height: 60px;
+  width: 60px;
+  -webkit-transition: all 0.3s ease-in-out 0;
+  transition: all 0.3s ease-in-out 0;
+}
+
+.chasing-dots {
+  position: relative;
+  text-align: center;
+  margin-right: 30px;
+  -webkit-animation: rotate 2s infinite linear;
+  animation: rotate 2s infinite linear;
+}
+
+.chasing-dots .dot1,
+.chasing-dots .dot2 {
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  background-color: #fff;
+  border-radius: 50%;
+  -webkit-animation: bounce 2s infinite ease-in-out;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+.chasing-dots .dot2 {
+  top: auto;
+  bottom: 0;
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes bounce {
+  0%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+
+  50% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}

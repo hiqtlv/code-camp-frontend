@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+  /* background-image: url("https://www.planwallpaper.com/static/images/6890733-mountain-peaks-wallpaper-hd.jpg"); */
+  background-image: url("../Assets/Images/mountains.png");
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
