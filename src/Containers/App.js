@@ -1,39 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
+import "../Assets/Icons";
+import Mocks from "../Assets/Mocks";
+
 import SideMenu from "../Components/SideMenu/SideMenu";
 import Main from "../Components/Main/Main";
 import Login from "./Login/Login";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
-
-import {
-  faIgloo,
-  faUser,
-  faUserTie,
-  faUserAstronaut,
-  faUserNinja,
-  faUserSecret,
-  faUserNurse,
-  faUserMd,
-  faUserInjured,
-  faUserGraduate,
-  faFilter
-} from "@fortawesome/free-solid-svg-icons";
-
-library.add(
-  faIgloo,
-  faUser,
-  faUserTie,
-  faUserAstronaut,
-  faUserNinja,
-  faUserSecret,
-  faUserNurse,
-  faUserMd,
-  faUserInjured,
-  faUserGraduate,
-  faFilter
-);
 
 class App extends Component {
   constructor(...args) {
@@ -47,85 +19,10 @@ class App extends Component {
   };
 
   getUsers = () => {
-    const appendage = [
-      {
-        id: 1,
-        name: "Mirco Jakse",
-        username: "NiM",
-        email: "mirco.jakse@hiq.se",
-        address: {
-          street: "Regeringsgatan 20",
-          suite: "9th Story",
-          city: "Stockholm",
-          zipcode: "111 53",
-          geo: {
-            lat: "59.3296487",
-            lng: "18.0720103"
-          }
-        },
-        phone: "+46 (0)8-588 900 00",
-        website: "hiq.se",
-        company: {
-          name: "HiQ",
-          catchPhrase: "Simplicity is the new innovation",
-          bs:
-            "We simplify peoples lives with the help of technology, design and communication."
-        }
-      },
-      {
-        id: 2,
-        name: "Ernesto Garcia",
-        username: "EG",
-        email: "ernesto.garcia@hiq.se",
-        address: {
-          street: "Regeringsgatan 20",
-          suite: "9th Story",
-          city: "Stockholm",
-          zipcode: "111 53",
-          geo: {
-            lat: "59.3296487",
-            lng: "18.0720103"
-          }
-        },
-        phone: "+46 (0)8-588 900 00",
-        website: "hiq.se",
-        company: {
-          name: "HiQ",
-          catchPhrase: "Simplicity is the new innovation",
-          bs:
-            "We simplify peoples lives with the help of technology, design and communication."
-        }
-      },
-      {
-        id: 3,
-        name: "Jonas Henriksson",
-        username: "JH",
-        email: "jonas.henriksson@hiq.se",
-        address: {
-          street: "Regeringsgatan 20",
-          suite: "9th Story",
-          city: "Stockholm",
-          zipcode: "111 53",
-          geo: {
-            lat: "59.3296487",
-            lng: "18.0720103"
-          }
-        },
-        phone: "+46 (0)8-588 900 00",
-        website: "hiq.se",
-        company: {
-          name: "HiQ",
-          catchPhrase: "Simplicity is the new innovation",
-          bs:
-            "We simplify peoples lives with the help of technology, design and communication."
-        }
-      }
-    ];
-
     return fetch("https://jsonplaceholder.typicode.com/users")
       .then(res => res.json())
       .then(json => {
-        appendage.forEach(user => {
+        Mocks.users.forEach(user => {
           user.id = json.length + 1;
           json.push(user);
         });
@@ -171,24 +68,6 @@ class App extends Component {
   }
 
   render() {
-    // return (
-    //   <div className="App">
-    //     <Login
-    //       isReady={this.state.isLoaded}
-    //       login={this.logIn}
-    //       isLoggedIn={this.state.isLoggedIn && this.state.isLoaded}
-    //     />
-    //     <SideMenu
-    //       logout={this.logOut}
-    //       isLoggedIn={this.state.isLoggedIn && this.state.isLoaded}
-    //     />
-    //     <Main
-    //       isLoggedIn={this.state.isLoggedIn && this.state.isLoaded}
-    //       users={this.userData}
-    //     />
-    //   </div>
-    // );
-
     let mainView = (
       <div className="App">
         <Login
@@ -213,6 +92,7 @@ class App extends Component {
         </div>
       );
     }
+
     return mainView;
   }
 }
