@@ -36,7 +36,7 @@ const Users = props => {
     );
   });
 
-  return <ul className="App-users">{userList}</ul>;
+  return <ul className={styles.app_users}>{userList}</ul>;
 };
 
 export default Users;

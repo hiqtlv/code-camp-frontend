@@ -37,6 +37,7 @@ class Login extends Component {
   }
 
   render() {
+    let style = {};
     let template = false;
     if (this.props.isLoggedIn) {
       template = (
@@ -44,9 +45,9 @@ class Login extends Component {
           <header className="App-header">
             <p>header</p>
           </header>
-          <div className="App-content container">
+          <div className="App-content">
             <h1>UserList</h1>
-            <Form>
+            <Form className="container">
               <Form.Group controlId="formEmail">
                 <Form.Label>Filter</Form.Label>
                 <InputGroup>
@@ -63,7 +64,9 @@ class Login extends Component {
                 </InputGroup>
               </Form.Group>
             </Form>
-            <Users users={this.state.filteredUsers} />
+            <div className="inside">
+              <Users users={this.state.filteredUsers} />
+            </div>
           </div>
           <footer className="App-footer">
             <p>footer</p>

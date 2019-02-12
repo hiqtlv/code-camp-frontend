@@ -1,9 +1,23 @@
+.app_users {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  padding: 0;
+}
 .app_user {
   list-style: none;
   padding: 8px 16px;
+  margin: 8px 40px;
   display: flex;
+  flex-shrink: 0;
 }
 .avatar {
+  min-width: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
