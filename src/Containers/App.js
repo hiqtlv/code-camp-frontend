@@ -149,12 +149,15 @@ class App extends Component {
         isLoggedIn: valid
       });
       this.setState({ isLoaded: true });
-    }, 1500);
+    }, 1200);
   };
 
   logOut = e => {
-    this.setState({
-      isLoggedIn: false
+    this.setState({ isLoaded: false });
+    this.getUsers().then(() => {
+      setTimeout(() => {
+        this.setState({ isLoaded: true, isLoggedIn: false });
+      }, 500);
     });
   };
 
